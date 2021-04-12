@@ -69,3 +69,18 @@ for (let x = 1; x <= 9; x ++) {
 }
 
 // 7) Бинарный поиск на цикл while - не понял как делать
+let min = 1, max = 100;
+while (true) {
+    let sred = (min + max) / 2;
+    let ans = parseInt(prompt(`аше угаданное число ${sred}? 0-нет, 1-да`));
+    if (ans === 1) {
+        console.log("Ура, компьютер угадал");
+        break;
+    }
+    parseInt(prompt(`Ваше число меньше ${sred}? 0-нет, 1-да`));
+    if (ans === 0) {
+        min = sred;
+    } else {
+        max = sred;
+    }
+}
