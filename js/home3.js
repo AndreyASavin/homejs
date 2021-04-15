@@ -33,9 +33,17 @@ for (let y=0; y<10; y++) {
 console.log(x);
 let f = [];
 for (let z=0; z<x.length; z++) {
-    if (x[z] < 0) {
-        let e = x.slice(z, z+1);
-        f.push(e);
-    }
+    if (x[z] < 0) f.push(x[z]);
 }
 console.log(f);
+
+//2 задача еще вариант
+
+let nums = [-34, 78, -10, -30, 90, 8, 6];
+let min = Number.MAX_VALUE;
+let max = Number.MIN_VALUE;
+
+for (let p = 0; p < nums.length; p ++) {
+    if (nums[p] < min) min = nums[p];
+    if (nums[p] > max) max = nums[p];
+}
