@@ -13,14 +13,14 @@ function declOfNum(n, text_forms) {
 
 // 2) Функция range
 let f=[];
-let e;
 function range(start, end, step=1){
-    for (e=start; e <= end; e+step){
-        return f.push(e);
-    } e+=step;
+    for (let i=start; i<=end; step){
+        f.push(i), i+=step;
+    }
+    return f;
 }
-let z = range(1, 10, 2);
-console.log(z);
+let c = range(1, 10, 3);
+console.log(c);
 
 // 3) Функция поиска спама
 function findSpam(o, ...s) {
