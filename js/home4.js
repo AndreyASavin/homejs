@@ -22,21 +22,26 @@ function range(start, end, step=1){
 let c = range(1, 10, 3);
 console.log(c);
 
-// 3) Функция поиска спама
-function findSpam(o, ...s) {
-    let t = o.split(" "), count = 0;
-    for (let i=0; i < s.length; i++) {
-        for (let j=0; j < t.length; j++){
-            if (s[i]===t[j])
-            count++;
-        }
-            if (count >=0 || count < 3)
-            return "слово "+s[i]+" не спам";
-            if (count >=3 || count < 5)
-            return "слово "+s[i]+" может быть спам";
-            if (count >= 5)
-            return "слово "+s[i]+" точно спам";
-    }
+// 3) Функция поиска спама (не готова)
+function findSpam(arr1, arr2) {
+    let t = arr1.split(" "), m=[];
+    for (let i = 0; i < t.lenght; i++) {
+    m = t.filter(elem => arr2[i].includes(elem))
+    i++;}
+    return m.length
 }
-let a = findSpam("да нет да нет привет да нет привет да да да пока супер супер чо каво", "да")
-console.log(a);
+let u = ("да нет да нет привет да нет привет да да да пока супер супер чо каво")
+let w = ["да", "нет"]
+console.log(findSpam(u, w));
+
+// 4) многомерный массив
+let numsArr = [
+    [3, 5, -1, 6, 0],
+    [56, -9, 111, 6],
+    [11, 86, -12],
+];
+let A1=numsArr.map(elem=>elem.map(num=>num*=10));
+console.log(A1);
+let A2=numsArr.map(elem=>elem.filter(num=>num>0));
+console.log(A2);
+
